@@ -37,17 +37,19 @@ so, if we want value 6, we would call the array's name followed by brackets with
 *manim of 6's box and index being highlighted*
 
 great, now you know how to visualize an array and how access any value at a given index.
-we have one last core concept to go over before we transition into writing some basic array functions: array traversal
+we have one last core concept to go over before we transition into writing some basic array functions
+we'll be going over: array traversal
 
 ========
 NEW MANIM SECTION: FOR LOOP ANIMATION (TEXT BREAKDOWN + PRINT FOR LOOP)
 ========
 
-almost every array operation you'll be writing requires some form of traversal, where you are basically examining or manipulating each element in an array to get a result;
-printing would be outputting each element in an array with a cout statement, searching would be examining each element and evaluating it, etc. etc
+almost every basic array operation you'll be writing, will require some form of traversal--
+where you are basically examining or manipulating each element in an array to get a result;
+printing would be outputting each element with a cout statement, searching would be examining each element and evaluating it, etc. etc
 
-in practice, array traversal is just a loop with bounds you choose; 
-for traversing through our int array,
+in practice, array traversal is just a fancy term for a loop with bounds that you choose; 
+so. if we wanted to traverse through our int array,
 we would start at the first index and go through each element till we reach the last index
 *manim highlight 1st box and last box*
 
@@ -56,50 +58,63 @@ for(int i = 0; i < size; i++){}; ****NEW MANIM TEXT****
 remember, our starting index is 0 and we want to increment by 1 until we reach our last index.
 *have manim box arround each clause accordingly*
 
-to see this for loop in action, let's look at a standard array print function: ****NEW MANIM TEXT******
-we can break it down as a loop that goes through each index, prints it, and moves to the next index 
+
+the variable i will be an in instance of each index as this loop is ran.
+*manim animation of i increasing paired with highlights of each index as i equals it*
+
+to see this for loop in action, as in actually accessing elements in an array, 
+let's look at a standard array print function: ****NEW MANIM TEXT******
+we can break this logic down into: as our array traverses arr, we are accessing and outputting the value of a[i], and moving to the next index until we are at our last index.
 *manim highlighting each clause* *below it the arrow will start pointing!!!* fk
 
 for(int i = 0; i < size; i++){
     cout << a[i] << endl;
 }
 
-
 as a short review of this section:
-you should be able to visualize an array's elements and indices and how to fully traverse one.
+you should be able to visualize an array's elements and indices and understand how to traverse an array.
 
 ==================
 
 ok, we have our fundamentals down. we're ready to start approaching some basic array functions.
 
-before writing any code, we need to be looking at the function signature for clues on what we'll be writing
+before writing any code, i highly encourage you to look at the function signature for clues as to what you'll be writing
 
 let's look at this search function.
-we're given a return type of int and the parameters of an int array, its size, and an int val
+we're given a return type of int and the parameters of an int array, the size of the int array, and an int val
 and its name is search;
 
 given these parameters and its name, we can assume that we'll be searching the array given to us, *highlighting arrary*
-searching for what--search for a value that equals the int val we're given  *highlighting int val*
-and we're returning an int, that means we're likely returning the index of the value in the array
+searching for what--search for a value in the array that equals the value we were given  *highlighting int val*
+and we're returning an int type, that means we're likely returning the index of the value in the array
+    if we had a bool type, then we'd be returning true or false if the given value was in the array.
 
-by looking at the function signature, we've just given ourselves the 3 steps we need:
+just by looking at the function signature, we've just given ourselves the 3 steps we need to write this function:
 
 1. a loop through our given array || a[0] - a[size]
 2. an evaluation that occurs within the loop || if(a[i] == val)
 3. and what we should return if our evaluation is succesful || return i
 
 great, now that we know what we need to do, let's start writing the logic of our code;
-we know that we'll need a loop that runs 0 thru size amount of times
+*this will have me writing and mumbling probably.*
+a for loop, into a conditional, into a return statement
 *manim animation of int array* 
 
 //EDGE CASE DISCUSSION.
 ok our code is basically almost perfect, we still need to consider one last thing: edge cases;
-what if our array doesn't contain an element with the value: val; then nothing would be returned and we break our return type contract of int
+what if our array doesn't contain an element with the value: val; 
+then nothing would be returned and we break our return type contract of int
 let's write a return statement that mitigates this and will be useful later on when used: 
 return -1;
+-1 is a good default return, because we know indexes start at 0, making it impossible to be a valid index
+and we're assigning a specific value to if the value was found or not, making it useful for conditionals later on
 
-ok, let's review what we did; we wrote a loop that traversed (went through) the array
+if(search(arr, 5, 5) != -1) for example
+
+ok, let's review what we've done; we've written a loop that traversed the array
 and then we evaluated if the array's value was == to the given int val
-we return index i
+we return variable i as it would be the the index of the value.
+we return -1 if no value in the array matched our given value.
+
 
 
