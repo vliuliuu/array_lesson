@@ -1,46 +1,105 @@
-in this video we will go over what an array is and how you should be thinking about approaching array problems
+in this video we'll be visualizing how arrays are stored and accessed
+and explain how you should be approaching functions that deal with arrays
 
-
-by the end of this series of array videos, you will be able to visualize and write the solutions to barkeshli's assignment
-and be able to thrink through leetcode *vine boom with faang logo * problems with ease
+by the end of this series of array videos, you should be able to visualize and write the solutions to barkeshli's assignments
+as well as be able to problem solve your way through the majority of leetcode *vine boom with faang logo * easy to medium array problems
 
 ====
+*talk about memory and contiguous-ness in article portion*
+ok, we've dangled the carrot *faang ka-ching money noise*
+now let's start walking the pig.
 
-before we start writing our functions, let's quickly summarize and visualize what an array is and how to use one
+let's quickly summarize initializing and accessing values of an array
 
-one thing about arrays that you should know is that arrays are stored like this in memory 
-(fancy term for it is contiguous *on screen*, memory becomes important as you progress through cs courses):
-(manim animation of boxes together)* 
+========
+NEW MANIM SECTION: showing array with values and their indices
+========
 
-if i were to initialize and declare values of an int array named arr
-int arr[10] = {1,2,3,4}; <- code i'm referring to
+if i were to initialize an int array named arr that holds values 1-7, using the following statement
+int arr[10] = {1,2,3,4,5,6,7}; <- ****MANIM TEXT****
 
 the array would look something like this:
 *manim animation of numbers being put in boxes*
 
-ok we have our values stored now, but in order to actually do anything with our array, we need to be able to access values
+the values of our int array are now stored, 
+but in order to actually do anything useful with our array, we need to be able to access said values,
 
-to access a value stored in an array, you need its index; indexes in c++ always start at 0
-*manim animation of 0-10 index being put below the array boxes*
+========
+NEW MANIM SECTION: indexing (HIGHLIGHTING THE VALUE BOX)
+========
 
-if we want value 8, we would call arr[*index of 8*]
-*ma of 8's box and index being highlighted*
+for accessing values, we will need the indexes of our elements. 
+*on screen explanation- element is more accurate term for the entities stored at each index, with value being the data stored in the element itself; example of this in action: the element stored at index 0 has a value of 1*
+*manim animation of 0-10 index being put below the array boxes* *on screen: indexes in c++ always start at 0*
 
-having this mental model of an array will be useful as we start writing our array functions
+so, if we want value 6, we would call the array's name followed by brackets with the index inside
+**NEW MANIM TEXT: arr[5];
+*manim of 6's box and index being highlighted*
 
+great, now you know how to visualize an array and how access any value at a given index.
+we have one last core concept to go over before we transition into writing some basic array functions: array traversal
+
+========
+NEW MANIM SECTION: FOR LOOP ANIMATION (TEXT BREAKDOWN + PRINT FOR LOOP)
+========
+
+almost every array operation you'll be writing requires some form of traversal, where you are basically examining or manipulating each element in an array to get a result;
+printing would be outputting each element in an array with a cout statement, searching would be examining each element and evaluating it, etc. etc
+
+in practice, array traversal is just a loop with bounds you choose; 
+for traversing through our int array,
+we would start at the first index and go through each element till we reach the last index
+*manim highlight 1st box and last box*
+
+this can be written as for int i equals zero, when i is less than size, i plus plus
+for(int i = 0; i < size; i++){}; ****NEW MANIM TEXT****
+remember, our starting index is 0 and we want to increment by 1 until we reach our last index.
+*have manim box arround each clause accordingly*
+
+to see this for loop in action, let's look at a standard array print function: ****NEW MANIM TEXT******
+we can break it down as a loop that goes through each index, prints it, and moves to the next index 
+*manim highlighting each clause* *below it the arrow will start pointing!!!* fk
+
+for(int i = 0; i < size; i++){
+    cout << a[i] << endl;
+}
+
+
+as a short review of this section:
+you should be able to visualize an array's elements and indices and how to fully traverse one.
 
 ==================
 
-ok, let's start with search; 
-before writing any code, you should be looking at the function 
-given a return type and parameters, and the name "search
+ok, we have our fundamentals down. we're ready to start approaching some basic array functions.
 
-so, let's walk through how you should approach the search function
+before writing any code, we need to be looking at the function signature for clues on what we'll be writing
 
-given an int array and an int value size;
+let's look at this search function.
+we're given a return type of int and the parameters of an int array, its size, and an int val
+and its name is search;
 
+given these parameters and its name, we can assume that we'll be searching the array given to us, *highlighting arrary*
+searching for what--search for a value that equals the int val we're given  *highlighting int val*
+and we're returning an int, that means we're likely returning the index of the value in the array
 
-once you know how to write these, you can apply the same techniques
-on more complex functions later on (pans down to append, shift, etc)
+by looking at the function signature, we've just given ourselves the 3 steps we need:
+
+1. a loop through our given array || a[0] - a[size]
+2. an evaluation that occurs within the loop || if(a[i] == val)
+3. and what we should return if our evaluation is succesful || return i
+
+great, now that we know what we need to do, let's start writing the logic of our code;
+we know that we'll need a loop that runs 0 thru size amount of times
+*manim animation of int array* 
+
+//EDGE CASE DISCUSSION.
+ok our code is basically almost perfect, we still need to consider one last thing: edge cases;
+what if our array doesn't contain an element with the value: val; then nothing would be returned and we break our return type contract of int
+let's write a return statement that mitigates this and will be useful later on when used: 
+return -1;
+
+ok, let's review what we did; we wrote a loop that traversed (went through) the array
+and then we evaluated if the array's value was == to the given int val
+we return index i
 
 

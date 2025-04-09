@@ -1,0 +1,7 @@
+# This file is used internally by FFMPEG.
+file 'file:/Applications/code/classes/cs3a/vid_lessons/array/manimscripts/vals/media/videos/explanation/480p15/partial_movie_files/array_init/3421487802_242960698_223132457.mov'
+file 'file:/Applications/code/classes/cs3a/vid_lessons/array/manimscripts/vals/media/videos/explanation/480p15/partial_movie_files/array_init/3218970159_4185659867_1877603040.mov'
+file 'file:/Applications/code/classes/cs3a/vid_lessons/array/manimscripts/vals/media/videos/explanation/480p15/partial_movie_files/array_init/3218970159_491320532_3621628028.mov'
+file 'file:/Applications/code/classes/cs3a/vid_lessons/array/manimscripts/vals/media/videos/explanation/480p15/partial_movie_files/array_init/3218970159_1839128356_3530554339.mov'
+file 'file:/Applications/code/classes/cs3a/vid_lessons/array/manimscripts/vals/media/videos/explanation/480p15/partial_movie_files/array_init/3218970159_1023833635_3121051744.mov'
+file 'file:/Applications/code/classes/cs3a/vid_lessons/array/manimscripts/vals/media/videos/explanation/480p15/partial_movie_files/array_init/3218970159_882041602_250994210.mov'
