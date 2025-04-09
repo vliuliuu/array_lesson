@@ -1,0 +1,45 @@
+in this video we will go over what an array is and how you should be thinking about approaching array problems
+
+
+by the end of this series of array videos, you will be able to visualize and write the solutions to barkeshli's assignment
+and be able to thrink through leetcode *vine boom with faang logo * problems with ease
+
+====
+
+before we start writing our functions, let's quickly summarize and visualize what an array is and how to use one
+
+one thing about arrays that you should know is that arrays are stored like this in memory 
+(fancy term for it is contiguous *on screen*, memory becomes important as you progress through cs courses):
+(manim animation of boxes together)* 
+
+if i were to initialize and declare values of an int array named arr
+int arr[10] = {1,2,3,4}; <- code i'm referring to
+
+the array would look something like this:
+*manim animation of numbers being put in boxes*
+
+ok we have our values stored now, but in order to actually do anything with our array, we need to be able to access values
+
+to access a value stored in an array, you need its index; indexes in c++ always start at 0
+*manim animation of 0-10 index being put below the array boxes*
+
+if we want value 8, we would call arr[*index of 8*]
+*ma of 8's box and index being highlighted*
+
+having this mental model of an array will be useful as we start writing our array functions
+
+
+==================
+
+ok, let's start with search
+given a return type and parameters, and the name "search
+
+so, let's walk through how you should approach the search function
+
+given an int array and an int value size;
+
+
+once you know how to write these, you can apply the same techniques
+on more complex functions later on (pans down to append, shift, etc)
+
+
