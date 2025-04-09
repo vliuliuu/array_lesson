@@ -31,7 +31,8 @@ having this mental model of an array will be useful as we start writing our arra
 
 ==================
 
-ok, let's start with search
+ok, let's start with search; 
+before writing any code, you should be looking at the function 
 given a return type and parameters, and the name "search
 
 so, let's walk through how you should approach the search function

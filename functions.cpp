@@ -45,6 +45,7 @@ template <typename ITEM_TYPE>
 void shift_left(ITEM_TYPE a[], int& numUsed, int mark){
 
     // [1,2,3,4]
+    // call to shift_left(arr, size, 1);
     // [1,3,4]
 
     for(int i = mark; i < numUsed; i++){
@@ -74,7 +75,7 @@ void insert_before(ITEM_TYPE a[], int& num_used, ITEM_TYPE item, int mark){
 template <typename ITEM_TYPE>
 void sort(ITEM_TYPE a[], int& num_used, bool ascending){
 
-    
+
     // bubble sort 
 
 
